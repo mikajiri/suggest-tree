@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Google Suggest Tree</title>
+  <!--CDN-->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <!--My-->
+  <script src="/lib/bootstrap-treeview-1.2.0/src/js/bootstrap-treeview.js"></script>
+  <link rel="stylesheet" href="/lib/bootstrap-treeview-1.2.0/src/css/bootstrap-treeview.css"></script>
+  <script src="/js/tree.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h1>Google Suggest Tree</h1>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-4">
+        <label for="q-input" class="col-sm-2 col-form-label">Query:</label>
+        <div class="col-sm-8">
+          <input type="text" id="q-input" class="form-control">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <label for="d-input" class="col-sm-2 col-form-label">Depth:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="d-input">
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <div class="col-sm-12 align-self-end">
+          <button id="btn-exec" type="submit" class="btn btn-primary mb-2">Create tree</button>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row" id="result-container" style="display: none;">
+      <div class="col-sm-4">
+        <h3>
+          <label class="checkbox-inline">
+            <input id="check-expand" type="checkbox"> Expand
+          </label>
+        </h3>
+        <div id="treeview"></div>
+      </div>
+      <div class="col-sm-4">
+        <div id="filter-box">
+          <div class="row">
+            <h3>Selected: <span class="label label-primary" id="filter-cap"></span></h3>
+          </div>
+          <div class="row">
+            <ul id="filter-result" class="list-unstyled">
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <h3>Text</h3>
+        <div id="treeviewtext"></div>
+      </div>
+    </div>
+  </div>
+</body>
